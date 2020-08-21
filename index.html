@@ -9,59 +9,59 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
 		.dropdown {
-  position: relative;
-  display: inline-block;
-}
+	  position: relative;
+	  display: inline-block;
+	}
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+	.dropdown-content {
+	  display: none;
+	  position: absolute;
+	  background-color: #f9f9f9;
+	  min-width: 160px;
+	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	  z-index: 1;
+	}
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
+	.dropdown-content a {
+	  color: black;
+	  padding: 12px 16px;
+	  text-decoration: none;
+	  display: block;
+	}
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+	.dropdown-content a:hover {background-color: #f1f1f1}
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+	.dropdown:hover .dropdown-content {
+	  display: block;
+	}
 
-.dropdown:hover .dropbtn {
-  background-color: #2d3748;
-}
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
+	.dropdown:hover .dropbtn {
+	  background-color: #2d3748;
+	}
+	.row {
+	  display: flex;
+	  flex-wrap: wrap;
+	}
 
-/* Create four equal columns */
-.column {
-  flex: 50%;
-  padding: 20px;
-}
+	/* Create four equal columns */
+	.column {
+	  flex: 50%;
+	  padding: 20px;
+	}
 
-/* On screens that are 992px wide or less, go from four columns to two columns */
-@media screen and (max-width: 992px) {
-  .column {
-    flex: 50%;
-  }
-}
+	/* On screens that are 992px wide or less, go from four columns to two columns */
+	@media screen and (max-width: 992px) {
+	  .column {
+	    flex: 50%;
+	  }
+	}
 
-/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .row {
-    flex-direction: column;
-  }
-}
+	/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+	@media screen and (max-width: 600px) {
+	  .row {
+	    flex-direction: column;
+	  }
+	}
 	</style>
 </head>
 <body>
@@ -70,11 +70,11 @@
 	    	<span class="font-semibold text-2xl tracking-tight">Uber</span>
 	    </div>
 	    <div class="block lg:hidden">
-	        <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+	        <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white" onclick="closeform()">
 	         <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
 	        </button>
 	    </div>
-	    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+	    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="navigation">
 		    <div class="text-sm lg:flex-grow">
 		    	<div class="dropdown">
 		        <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:bg-gray-800 py-2 px-4 rounded-full  hover:text-white lg:ml-5 lg:mr-4 dropbtn">
@@ -122,87 +122,101 @@
 	    </div>
 	</nav>
 
-<div class="row">
-  <div class="column" >
-    <div class="text-gray-700 lg:px-4 py-2 m-2">
+<div class="row bg-red-100 lg:mx-8">
+    <div class="column" >
+        <div class="text-gray-700 lg:px-4 py-2 m-2">
 			<div class="py-8 lg:px-12">
-			<div class="text-5xl font-semibold">Opportunity is everywhere</div>
-			<div class="text-lg py-2">Make the most of your time on the road on the platform with the largest network of active riders.</div>
+				<div class="text-5xl font-semibold">Opportunity is everywhere</div>
+				<div class="text-lg py-2">Make the most of your time on the road on the platform with the largest network of active riders.</div>
+			</div>
 		</div>
-		</div>
-  </div>
+    </div>
   
-  <div class="column">
-    <div class="w-10/12">
-  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-  	<div class="mb-6 text-2xl">
-  		<div class="float-left">Become a Driver</div>
-  		<div class="float-right">Signup to ride</div>
-  	</div>
-    <div class="mb-2 pt-6">
-     <label class="block text-gray-700 text-base font-semibold mb-2 " for="fname">
-        First Name
-      </label>
-      <input class=" bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="fname" type="text">
-    </div>
-    <div class="mb-2">
-     <label class="block text-gray-700 text-base font-semibold  mb-2 " for="lname">
-        Last Name
-      </label>
-      <input class=" bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="lname" type="text">
-    </div>
-    <div class="mb-2">
-     <label class="block text-gray-700 text-base font-semibold mb-2 " for="email">
-        Email
-      </label>
-      <input class=" bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="email" type="email">
-    </div>
-    <div class="mb-2">
-     <label class="block text-gray-700 text-base font-semibold  mb-2 " for="password">
-        Password
-      </label>
-      <input class=" bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="password" type="password" required>
-      
-    </div>
-    <div class="mb-2">
-     <label class="block text-gray-700 text-base font-semibold  mb-2 " for="phone">
-        Phone number
-      </label>
-      <input class=" bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="phone" type="phone">
-      
-    </div>
-    <div class="mb-2">
-     <label class="block text-gray-700 text-base font-semibold  mb-2 " for="city">
-        City you'll drive in
-      </label>
-      <input class=" bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="city" type="text" >
-      
-    </div>
-    <div class="mb-2">
-     <label class="block text-gray-700 text-base font-semibold  mb-2 " for="code">
-        Invite code(optional)
-      </label>
-      <input class=" bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="code" type="text" >
-    </div>
-    <div class="mb-2 text-xs">
-    	By proceeding, I agree to Uber's Terms of Use and acknowledge that I have read the Privacy Policy.
+    <div class="column">
+    	<div class="lg:w-11/12 w-full">
+  			<form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+	  			<div class="mb-6 text-2xl">
+			  		<div class="float-left">Become a Driver</div>
+			  		<div class="lg:float-right text-sm px-2"><a href="#">Signup to ride</a></div>
+			  	</div>
+			    <div class="mb-2 pt-6">
+				    <label class="block text-gray-700 text-base font-semibold mb-2 " for="fname">
+				        First Name
+				    </label>
+				    <input class=" bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="fname" type="text">
+			    </div>
+			    <div class="mb-2">
+			     <label class="block text-gray-700 text-base font-semibold  mb-2 " for="lname">
+			        Last Name
+			      </label>
+			      <input class=" bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="lname" type="text">
+			    </div>
+			    <div class="mb-2">
+			     <label class="block text-gray-700 text-base font-semibold mb-2 " for="email">
+			        Email
+			      </label>
+			      <input class=" bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="email" type="email">
+			    </div>
+			    <div class="mb-2">
+			     <label class="block text-gray-700 text-base font-semibold  mb-2 " for="password">
+			        Password
+			      </label>
+			      <input class=" bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="password" type="password" required>
+			      
+			    </div>
+			    <div class="mb-2">
+				    <label class="block text-gray-700 text-base font-semibold  mb-2 " for="phone">
+				        Phone number
+				    </label>
+				    <input class=" bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="phone" type="phone">
+			      
+			    </div>
+			    <div class="mb-2">
+			        <label class="block text-gray-700 text-base font-semibold  mb-2 " for="city">
+				        City you'll drive in
+				    </label>
+				    <input class=" bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="city" type="text" >
+			    </div>
+			    <div class="mb-2">
+				    <label class="block text-gray-700 text-base font-semibold  mb-2 " for="code">
+				        Invite code(optional)
+				    </label>
+				    <input class=" bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="code" type="text" >
+			    </div>
+				<div class="mb-2 text-xs">
+				    By proceeding, I agree to Uber's Terms of Use and acknowledge that I have read the Privacy Policy.
+				</div>
+				<div class="mb-2 text-xs">
+				    I also agree that Uber or its representatives may contact me by email, phone, or SMS (including by automated means) at the email address or number I provide, including for marketing purposes.
+			    </div>
+			    <div class="flex items-center justify-between mt-6">
+			      <button class="bg-gray-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+			        Sign up to Drive
+			      </button>
+			    </div>
+		    	<div class="mb-2">
+		    		<a class="inline-block align-baseline text-sm" href="#">
+		        	Already have an account ? Sign in
+		      		</a>
+		    	</div>
+	   		</form>
+	    </div>
+	</div>
 </div>
- <div class="mb-2 text-xs">
-I also agree that Uber or its representatives may contact me by email, phone, or SMS (including by automated means) at the email address or number I provide, including for marketing purposes.
-    </div>
-    <div class="flex items-center justify-between mt-6">
-      <button class="bg-gray-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-        Sign up to Drive
-      </button>
-    </div>
-    <div class="mb-2">
-    	<a class="inline-block align-baseline text-sm" href="#">
-        Already have an account ? Sign in
-      </a>
-    </div>
-  </form>
-  </div>
+<div class="row">
+	<div class="column">
+		<div class="text-3xl">Why drive with us ?</div>
+	</div>
 </div>
 </body>
-
+<script>
+	function closeform() {
+  var x = document.getElementById("navigation");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
 </html>
