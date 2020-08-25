@@ -7,64 +7,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge"> 
 	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<style>
-		.dropdown {
-	  position: relative;
-	  display: inline-block;
-	}
-
-	.dropdown-content {
-	  display: none;
-	  position: absolute;
-	  background-color: #f9f9f9;
-	  min-width: 160px;
-	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	  z-index: 1;
-	}
-
-	.dropdown-content a {
-	  color: black;
-	  padding: 12px 16px;
-	  text-decoration: none;
-	  display: block;
-	}
-
-	.dropdown-content a:hover {background-color: #f1f1f1}
-
-	.dropdown:hover .dropdown-content {
-	  display: block;
-	}
-
-	.dropdown:hover .dropbtn {
-	  background-color: #2d3748;
-	}
-	.row {
-	  display: flex;
-	  flex-wrap: wrap;
-	}
-
-	/* Create four equal columns */
-	.column {
-	  flex: 50%;
-	  padding: 20px;
-	}
-
-	/* On screens that are 992px wide or less, go from four columns to two columns */
-	@media screen and (max-width: 992px) {
-	  .column {
-	    flex: 50%;
-	  }
-	}
-
-	/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-	@media screen and (max-width: 600px) {
-	  .row {
-	    flex-direction: column;
-	  }
-	}
-	</style>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
+	<header>
 	<nav class="flex items-center justify-between flex-wrap bg-gray-900 lg:px-16  px-4 py-3">
 	    <div class="flex items-center flex-shrink-0 text-white mr-6">
 	    	<span class="font-semibold text-2xl tracking-tight">Uber</span>
@@ -77,19 +23,19 @@
 	    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="navigation">
 		    <div class="text-sm lg:flex-grow">
 		    	<div class="dropdown">
-		        <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:bg-gray-800 py-2 px-4 rounded-full  hover:text-white lg:ml-5 lg:mr-4 dropbtn">
-		        Company
-		    	</a>
-			    <div class="dropdown-content">
-				  <a href="#">About us</a>
-				  <a href="#">How Uber works</a>
-				  <a href="#">Global Citizenship</a>
-				  <a href="#">Newsroom</a>
-				  <a href="#">Investor relations</a>
-				  <a href="#">Blog</a>
-				  <a href="#">Careers</a>
+			        <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:bg-gray-800 py-2 px-4 rounded-full  hover:text-white lg:ml-5 lg:mr-4 dropbtn">
+			        Company
+			    	</a>
+				    <div class="dropdown-content">
+					  <a href="#">About us</a>
+					  <a href="#">How Uber works</a>
+					  <a href="#">Global Citizenship</a>
+					  <a href="#">Newsroom</a>
+					  <a href="#">Investor relations</a>
+					  <a href="#">Blog</a>
+					  <a href="#">Careers</a>
+					</div>
 				</div>
-			</div>
 		      <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-white  hover:bg-gray-800 py-2 px-4 rounded-full hover:text-white mr-4">
 		        Safety
 		      </a>
@@ -121,7 +67,7 @@
 	    	</div>
 	    </div>
 	</nav>
-
+</header>
 <div class="row bg-red-100 lg:mx-8">
     <div class="column" >
         <div class="text-gray-700 lg:px-4 py-2 m-2">
@@ -129,16 +75,17 @@
 				<div class="text-5xl font-semibold">Opportunity is everywhere</div>
 				<div class="text-lg py-2">Make the most of your time on the road on the platform with the largest network of active riders.</div>
 			</div>
+
 		</div>
+		
     </div>
-  
-    <div class="column">
+      <div class="column">
     	<div class="lg:w-11/12 w-full">
   			<form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 	  			<div class="mb-6 text-2xl">
 			  		<div class="float-left">Become a Driver</div>
-			  		<div class="lg:float-right text-sm px-2"><a href="#">Signup to ride</a></div>
-			  	</div>
+			  		<div class="lg:float-right float-left pt-2 text-base px-2 border-b-2 border-black"><a href="#">Signup to ride</a></div>
+			  	</div><br>
 			    <div class="mb-2 pt-6">
 				    <label class="block text-gray-700 text-base font-semibold mb-2 " for="fname">
 				        First Name
@@ -161,9 +108,12 @@
 			     <label class="block text-gray-700 text-base font-semibold  mb-2 " for="password">
 			        Password
 			      </label>
-			      <input class=" bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="password" type="password" required>
 			      
-			    </div>
+			      <input class="input-field bg-gray-300 appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-black focus:bg-white" id="password" type="password" required><span class="pass">
+       				 <i class="fa fa-eye" id="eye" onclick="togglepass()">
+        				</i>
+   					 </span>
+				</div>
 			    <div class="mb-2">
 				    <label class="block text-gray-700 text-base font-semibold  mb-2 " for="phone">
 				        Phone number
@@ -205,18 +155,465 @@
 </div>
 <div class="row">
 	<div class="column">
-		<div class="text-3xl">Why drive with us ?</div>
+		<div class="text-4xl font-semibold lg:px-20 p-4">Why drive with us</div>
+		<img src="https://www.uber-assets.com/image/upload/q_auto:eco,c_fill,w_1152,h_270/v1536163470/assets/3a/a87102-5c54-478c-8a98-0df3a951a202/original/whyDriveWithUs_desktop.svg" class="lg:pl-24 lg:pt-24">
 	</div>
+</div>
+<div class="wrapper mt-2">
+	<section class="items">
+		<div class="item lg:ml-20 pl-4 pt-4">
+			<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+			    <title>icon/calendar</title>
+			    <desc>Created with Sketch.</desc>
+			    <defs></defs>
+			    <g id="icon/calendar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			        <path d="M17,1 L17,4.001 L7,4.001 L7,1 L3.999,1 L3.999,4.001 L1,4.001 L1,23.001 L22.999,23.001 L22.999,4.001 L20,4.001 L20,1 L17,1 Z M3.999,9 L19.999,9 L19.999,7 L3.999,7 L3.999,9 Z M3.999,20.001 L19.999,20.001 L19.999,12 L3.999,12 L3.999,20.001 Z" id="Fill-1" fill="#000000"></path>
+			    </g>
+			</svg>
+			<div class="text-xl font-semibold pt-4">Set your own hours</div>
+			<div class="text-base pt-4">
+			You decide when and how often you drive.
+			</div>
+		</div>
+		<div class="item lg:ml-20 pl-4 pt-4">
+			<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+		    <title>icon/money</title>
+		    <desc>Created with Sketch.</desc>
+		    <defs></defs>
+		    <g id="icon/money" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		        <g id="Group" transform="translate(0.000000, 3.000000)">
+		            <path d="M0,17.4500008 L23.993751,17.4500008 L23.993751,0 L0,0 L0,17.4500008 Z M3.27187514,14.1781256 L20.7218759,14.1781256 L20.7218759,3.27187514 L3.27187514,3.27187514 L3.27187514,14.1781256 Z" id="Fill-1" fill="#000000"></path>
+		            <polygon id="Fill-2" fill="#000000" points="3.27187514 6 6 6 6 3.27187514 3.27187514 3.27187514"></polygon>
+		            <polygon id="Fill-3" fill="#000000" points="18 14.1781256 20.7218759 14.1781256 20.7218759 11.4562497 18 11.4562497"></polygon>
+		            <g id="Group-8" transform="translate(8.725000, 5.453125)">
+		                <path d="M3.27187514,4.90781271 C2.36992823,4.90781271 1.63593757,4.17382206 1.63593757,3.27187514 C1.63593757,2.36992823 2.36992823,1.63593757 3.27187514,1.63593757 C4.17382206,1.63593757 4.90781271,2.36992823 4.90781271,3.27187514 C4.90781271,4.17382206 4.17382206,4.90781271 3.27187514,4.90781271" id="Fill-4" fill="#FFFFFF"></path>
+		                <path d="M3.27187514,0.5 C1.74087611,0.5 0.5,1.74087611 0.5,3.27187514 C0.5,4.80287418 1.74087611,6.04375029 3.27187514,6.04375029 C4.80287418,6.04375029 6.04375029,4.80287418 6.04375029,3.27187514 C6.04375029,1.74087611 4.80287418,0.5 3.27187514,0.5" id="Fill-6" fill="#000000"></path>
+		            </g>
+		        </g>
+		    </g>
+			</svg>
+			    <div class="text-xl font-semibold pt-4">Get paid fast</div>
+			<div class="text-base pt-4">
+			Weekly payments in your bank account.
+			</div>
+	    </div>
+		<div class="item lg:ml-20 pl-4 pt-4">
+			<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+			    <title>icon/support</title>
+			    <desc>Created with Sketch.</desc>
+			    <defs>
+			        <polygon id="path-1" points="0 24 22.9565217 24 22.9565217 0 0 0"></polygon>
+			    </defs>
+			    <g id="icon/support" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			        <g id="Group-7">
+			            <path d="M8.34782609,7.30434783 C7.19686957,7.30434783 6.26086957,6.36834783 6.26086957,5.2173913 C6.26086957,4.06643478 7.19686957,3.13043478 8.34782609,3.13043478 C9.49878261,3.13043478 10.4347826,4.06643478 10.4347826,5.2173913 C10.4347826,6.36834783 9.49878261,7.30434783 8.34782609,7.30434783 M8.34782609,0 C5.46678261,0 3.13043478,2.33530435 3.13043478,5.2173913 C3.13043478,8.09947826 5.46678261,10.4347826 8.34782609,10.4347826 C11.2288696,10.4347826 13.5652174,8.09947826 13.5652174,5.2173913 C13.5652174,2.33530435 11.2288696,0 8.34782609,0" id="Fill-1" fill="#000000"></path>
+			            <path d="M0,18.7826087 L0,24 L3.13043478,24 L3.13043478,18.7826087 C3.13043478,17.0566957 4.53495652,15.6521739 6.26086957,15.6521739 L10.4347826,15.6521739 L10.4347826,12.5217391 L6.26086957,12.5217391 C2.8173913,12.5217391 0,15.3391304 0,18.7826087" id="Fill-3" fill="#000000"></path>
+			            <mask id="mask-2" fill="white">
+			                <use xlink:href="#path-1"></use>
+			            </mask>
+			            <g id="Clip-6"></g>
+			            <path d="M15.6521739,17.7391304 L19.826087,17.7391304 L19.826087,15.6521739 L15.6521739,15.6521739 L15.6521739,17.7391304 Z M12.5217391,12.5217391 L12.5217391,22.9565217 L12.5217391,24 L15.6521739,20.8695652 L22.9565217,20.8695652 L22.9565217,12.5217391 L12.5217391,12.5217391 Z" id="Fill-5" fill="#000000" mask="url(#mask-2)"></path>
+			        </g>
+			    </g>
+			</svg>
+    		<div class="text-xl font-semibold pt-4">Get support at every turn</div>
+			<div class="text-base pt-4">
+			If there’s anything that you need, you can reach us anytime.
+			</div>
+		</div>
+	</section>
+</div>
+<button class="text-lg lg:mx-24  mx-4 mt-4 border-gray border-b-2 focus:border-white">How driving works</button>
+<div class="row">
+	<div class="column">
+		<img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_585,h_329/v1581113810/assets/92/557e45-e7d5-44eb-90e1-35871c82f0ad/original/UberIM_004994-medium.jpg" class="lg:pl-24 lg:py-24">
+	</div>
+	<div class="column">
+		<div class="text-gray-700 lg:px-4 py-4">
+			<div class="py-8 lg:px-12">
+				<div class="text-4xl font-semibold pt-10 lg:w-1/2">Earn on your schedule</div>
+				<div class="text-lg py-2 my-4 lg:w-1/2">Fit driving around what matters most. Drive at any time and on any day of the week.</div>
+				<button class="text-base mt- border-b-2">Learn More</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="text-4xl font-semibold lg:mx-24 px-4">Here's what you need to sign up</div>
+<div class="tab lg:mx-24 lg:my-6 px-4 pt-4 border-b-2 ">
+<button class="tablink text-xl p-2" onclick="openPage('Drive', this)" id="defaultOpen">To drive</button>
+<button class="tablink text-xl px-4  p-2" onclick="openPage('Deliver', this)">To deliver</button>
+</div>
+<div class="wrapper mt-2 tabcontent" id="Drive">
+	<section class="items">
+		<div class="item lg:ml-20 pl-4 pt-4">
+			<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+		    <title>icon/requirement</title>
+		    <desc>Created with Sketch.</desc>
+		    <defs></defs>
+		    <g id="icon/requirement" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		        <path d="M12,0 L8.18181818,7.63527273 L0,8.18181818 L6,14.1818182 L3.81818182,22.9090909 L12,18.5454545 L20.1829091,22.9090909 L18,14.1818182 L24,8.18181818 L15.8181818,7.63527273 L12,0 Z M8.85709091,14.8952727 L9.26181818,13.2785455 L8.08254545,12.0992727 L6.67309091,10.6898182 L8.37818182,10.5752727 L10.0614545,10.4618182 L10.8163636,8.95309091 L12,6.58581818 L13.1836364,8.95309091 L13.9385455,10.4618182 L15.6218182,10.5752727 L17.328,10.6898182 L15.9174545,12.0992727 L14.7381818,13.2785455 L15.1429091,14.8952727 L15.7156364,17.1894545 L13.3865455,15.9458182 L12,15.2061818 L10.6134545,15.9458182 L8.28436364,17.1894545 L8.85709091,14.8952727 Z" id="Fill-1" fill="#000000"></path>
+		    </g>
+		    </svg>
+	    	<div class="text-xl font-semibold pt-4">Requirements</div>
+			<div class="text-base pt-4">
+					<ul style="list-style-type:disc;" class="lg:pl-12 px-4">
+						<li>Be at least 18 years old</li>
+						<li>Clear a background screening</li>
+					</ul>
+			</div>
+		</div>
+		<div class="item lg:ml-20 pl-4 pt-4">
+			<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+			    <title>icon/document</title>
+			    <desc>Created with Sketch.</desc>
+			    <defs></defs>
+			    <g id="icon/document" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			        <g id="Group" transform="translate(2.000000, 0.000000)" fill="#000000">
+			            <path d="M0,24 L20,24 L20,0 L0,0 L0,24 Z M3.33353405,20.7281864 L16.6676703,20.7281864 L16.6676703,3.27299601 L3.33353405,3.27299601 L3.33353405,20.7281864 Z" id="Fill-1"></path>
+			            <polygon id="Fill-2" points="5 8 14 8 14 5 5 5"></polygon>
+			            <polygon id="Fill-3" points="5 13 12 13 12 10 5 10"></polygon>
+			        </g>
+			    </g>
+			</svg>
+    		<div class="text-xl font-semibold pt-4">Documents</div>
+			<div class="text-base pt-4">
+				<ul style="list-style-type:disc;" class="lg:pl-12 px-4">
+					<li>Valid driver's license (private or commercial), if you plan to drive</li>
+					<li>Proof of residency in your city, state or province</li>
+					<li>Car documents such as commercial insurance, vehicle registration certificate, permit</li>
+				</ul>
+			</div>
+		</div>
+		<div class="item lg:ml-20 pl-4 pt-4">
+			<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+			    <title>icon/documentCheck</title>
+			    <desc>Created with Sketch.</desc>
+			    <defs></defs>
+			    <g id="icon/documentCheck" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			        <g id="Group-3" transform="translate(1.000000, 1.000000)" fill="#000000">
+			            <polygon id="Fill-1" points="16 10.1206 16 5.8786 9.5 12.3786 6 8.8786 6 13.1206 9.5 16.6206"></polygon>
+			            <path d="M0,22 L22,22 L22,0 L0,0 L0,22 Z M3,19 L19,19 L19,3 L3,3 L3,19 Z" id="Fill-2"></path>
+			        </g>
+			    </g>
+			</svg>
+    		<div class="text-xl font-semibold pt-4">Signup process</div>
+			<div class="text-base pt-4">
+				<ul style="list-style-type:disc;" class="lg:pl-12 px-4">
+					<li>Visit the nearest Partner Seva Kendra in your city</li>
+					<li>Submit documents and photo</li>
+					<li>Provide information for a background check</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</div>
+<div class="wrapper mt-2 tabcontent" id="Deliver">
+	<section class="items">
+		<div class="item lg:ml-20 pl-4 pt-4">
+			<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+		    <title>icon/requirement</title>
+		    <desc>Created with Sketch.</desc>
+		    <defs></defs>
+		    <g id="icon/requirement" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		        <path d="M12,0 L8.18181818,7.63527273 L0,8.18181818 L6,14.1818182 L3.81818182,22.9090909 L12,18.5454545 L20.1829091,22.9090909 L18,14.1818182 L24,8.18181818 L15.8181818,7.63527273 L12,0 Z M8.85709091,14.8952727 L9.26181818,13.2785455 L8.08254545,12.0992727 L6.67309091,10.6898182 L8.37818182,10.5752727 L10.0614545,10.4618182 L10.8163636,8.95309091 L12,6.58581818 L13.1836364,8.95309091 L13.9385455,10.4618182 L15.6218182,10.5752727 L17.328,10.6898182 L15.9174545,12.0992727 L14.7381818,13.2785455 L15.1429091,14.8952727 L15.7156364,17.1894545 L13.3865455,15.9458182 L12,15.2061818 L10.6134545,15.9458182 L8.28436364,17.1894545 L8.85709091,14.8952727 Z" id="Fill-1" fill="#000000"></path>
+		    </g>
+			</svg>
+	    	<div class="text-xl font-semibold pt-4">Requirements</div>
+			<div class="text-base pt-4">
+				<ul style="list-style-type:disc;" class="lg:pl-12 px-4">
+					<li>Be at least 18 years old</li>
+					<li>Clear a background screening</li>
+				</ul>
+			</div>
+		</div>
+		<div class="item lg:ml-20 pl-4 pt-4">
+			<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+		    <title>icon/document</title>
+		    <desc>Created with Sketch.</desc>
+		    <defs></defs>
+		    <g id="icon/document" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		        <g id="Group" transform="translate(2.000000, 0.000000)" fill="#000000">
+		            <path d="M0,24 L20,24 L20,0 L0,0 L0,24 Z M3.33353405,20.7281864 L16.6676703,20.7281864 L16.6676703,3.27299601 L3.33353405,3.27299601 L3.33353405,20.7281864 Z" id="Fill-1"></path>
+		            <polygon id="Fill-2" points="5 8 14 8 14 5 5 5"></polygon>
+		            <polygon id="Fill-3" points="5 13 12 13 12 10 5 10"></polygon>
+		        </g>
+		    </g>
+			</svg>
+	        <div class="text-xl font-semibold pt-4">Documents</div>
+			<div class="text-base pt-4">
+				<ul style="list-style-type:disc;" class="lg:pl-12 px-4">
+					<li>Valid driver's license </li>
+					<li>Proof of residency in your city, state or province like Pan Card</li>
+					<li>Vehicle documents such as insurance, vehicle registration certificate</li>
+				</ul>
+			</div>
+		</div>
+		<div class="item lg:ml-20 pl-4 pt-4">
+			<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+		    <title>icon/documentCheck</title>
+		    <desc>Created with Sketch.</desc>
+		    <defs></defs>
+		    <g id="icon/documentCheck" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		        <g id="Group-3" transform="translate(1.000000, 1.000000)" fill="#000000">
+		            <polygon id="Fill-1" points="16 10.1206 16 5.8786 9.5 12.3786 6 8.8786 6 13.1206 9.5 16.6206"></polygon>
+		            <path d="M0,22 L22,22 L22,0 L0,0 L0,22 Z M3,19 L19,19 L19,3 L3,3 L3,19 Z" id="Fill-2"></path>
+		        </g>
+			    </g>
+			</svg>
+			<div class="text-xl font-semibold pt-4">Signup process</div>
+			<div class="text-base pt-4">
+				<ul style="list-style-type:disc;" class="lg:pl-12 px-4">
+					<li>Visit the nearest Partner Seva Kendra in your city</li>
+					<li>Submit documents and photo</li>
+					<li>Provide information for a background check</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<button class="text-lg lg:mx-24  px-4 mt-6 border-gray border-b-2 focus:border-white">How to signup to deliver</button>
+</div>
+<div class="row bg-gray-200 lg:mx-40 my-12 rounded-tr-full">
+    <div class="column" >
+        <div class="text-gray-700 lg:px-4 py-2 m-2">
+			<div class="py-8 lg:px-12">
+				<div class="text-4xl font-semibold">Driving and delivery requirements</div>
+				<div class="text-lg py-2">Age minimums, vehicle eligibility, and required documents vary by city according to local laws and regulations</div>
+				<button class="text-lg  mt-6 border-gray border-b-2 focus:border-white">See requirements for driving</button>
+             	<button class="text-lg mt-4 border-gray border-b-2 focus:border-white">See requirements for delivery</button>
+			</div>
+		</div>
+    </div>
+    <div class="column">
+    	<div class="">
+	    </div>
+	</div>
+</div>
+<div class="row">
+	<div class="column">
+		<img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_496,h_279/v1535744030/assets/7e/4c2f7e-da89-4c1e-a8cf-1b56172c6e5b/original/D_Fleet2x.png" class="lg:pl-24 lg:pt-24">
+		<div class="text-xl font-semibold lg:pl-24 pt-6 px-4">Join a fleet</div>
+		<div class="text-lg lg:pl-24 pt-2 pr-8 px-4">
+		Find and join a fleet partner and start driving for them using the Uber app.</div>
+	</div>
+	<div class="column">
+		<img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_496,h_279/v1535753709/assets/ec/8183dc-ffee-468a-9ee8-175bd1fb1f55/original/D_Fleet_22x.png" class=" lg:pt-24">
+		<div class="text-xl font-semibold pt-6 px-4">Become a fleet partner</div>
+		<div class="text-lg  pt-2 pr-12 pl-4">
+		Start making money. Connect your drivers and upload the required documents to your profile.</div>
+	</div>
+</div>
+<div class="font-semibold text-4xl lg:mx-20 px-6 mt-12">Safety on the road</div>
+<div class=" text-lg lg:mx-20 px-6 mt-4">Your safety drives us to continuously raise the bar.</div>
+<div class="wrapper mt-6">
+	<section class="items">
+		<div class="item lg:ml-16 pl-4 pt-4">
+			<svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 85 85"><defs><style>.cls-1{fill:#276ef1;}.cls-2{fill:#9cc0ff;}.cls-3{fill:#fff;}</style></defs><title>Safety Center</title><g id="Hand_Ref" data-name="Hand Ref"><path class="cls-1" d="M8,19.72,42.5,0,77,19.72v23.6A39.73,39.73,0,0,1,54.74,79L42.5,85,30.26,79A39.73,39.73,0,0,1,8,43.32Z"/><path d="M69.34,24.67V43.32a32.3,32.3,0,0,1-18,28.82L42.5,76.49l-8.88-4.35a32.1,32.1,0,0,1-18-28.81V24.67L42.5,9.35Z"/><polygon class="cls-2" points="42.42 42.06 42.41 42.08 42.4 42.07 42.42 42.06"/><polygon class="cls-2" points="42.42 42.06 42.42 42.1 42.41 42.08 42.42 42.06"/><polygon class="cls-2" points="42.42 42.06 42.4 42.07 42.38 42.05 42.42 42.06"/><path class="cls-3" d="M61.68,33.71l-14.76.06L42.42,19.72l-4.5,14.05-14.76-.06,12,8.63-4.61,14,11.9-8.71,11.71,8.58.2.14-4.62-14Z"/><path class="cls-2" d="M33.75,62.08H51v3.1a2.87,2.87,0,0,0-2.87,2.87H36.63a2.87,2.87,0,0,0-2.87-2.87Z"/></g></svg>
+	    	<div class="text-xl font-semibold pt-4">Safety features</div>
+			<div class="text-base pt-4">
+			Tell your loved ones where you are. Get help with the tap of a button. Technology makes travel safer than ever before.
+			</div>
+		</div>
+		<div class="item lg:ml-20 pl-4 pt-4">
+			<svg xmlns="http://www.w3.org/2000/svg" height="50px" width="50px" viewBox="0 0 85 85"><defs><style>.cls-1{fill:#9cc0ff;}.cls-2{fill:#276ef1;}.cls-3{fill:#fff;}</style></defs><title>24_7 Support</title><g id="Hand_Ref" data-name="Hand Ref"><path class="cls-1" d="M16.35,0H77a8,8,0,0,1,8,8V43.93a8,8,0,0,1-8,8H24.35a8,8,0,0,1-8-8V0a0,0,0,0,1,0,0Z" transform="translate(101.35 51.93) rotate(-180)"/><polygon class="cls-1" points="85 71.3 85 45.71 68.33 51.92 85 71.3"/><path class="cls-2" d="M8,26.93H60.17a8.17,8.17,0,0,1,8.17,8.17V61.22a8,8,0,0,1-8,8H0a0,0,0,0,1,0,0V34.93A8,8,0,0,1,8,26.93Z"/><polygon class="cls-2" points="0 85 0 64.16 15.82 69.22 0 85"/><path class="cls-2" d="M68.33,34.66V61.5a7.73,7.73,0,0,1-7.73,7.73H0V34.66a7.73,7.73,0,0,1,7.73-7.73H60.61A7.73,7.73,0,0,1,68.33,34.66Z"/><path class="cls-3" d="M68.33,34.66V51.93H24.07a7.73,7.73,0,0,1-7.73-7.73V26.93H60.61A7.73,7.73,0,0,1,68.33,34.66Z"/><ellipse cx="50.82" cy="39.43" rx="2.83" ry="2.82"/><ellipse cx="42.34" cy="39.43" rx="2.83" ry="2.82"/><ellipse cx="33.85" cy="39.43" rx="2.83" ry="2.82"/></g></svg>
+    		<div class="text-xl font-semibold pt-4">Help if you need it</div>
+			<div class="text-base pt-4">
+			From contacting emergency assistance to getting 24/7 support, the app is designed around your safety.
+			</div>
+		</div>
+		<div class="item lg:ml-20 pl-4 pt-4">
+			<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" height="50px" width="50px" viewBox="0 0 85 85"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#276ef1;}.cls-3{fill:#9cc0ff;}</style></defs><title>Community Guidelines</title><rect class="cls-1" x="51.64" y="0.01" width="23.41" height="27.01"/><path d="M83.62,29a4.38,4.38,0,0,1-.19.82A10.06,10.06,0,0,1,73.56,38l-.58,0-.11,0L65,35.56l2.62-16.94-3.11-4.9,0-.05.18-.38,2.6-5.46,1.79-3.75.2-.43a6,6,0,0,1,1-1.53L70.46,2l0,0,.16-.16.1-.09.06-.06L71,1.49l.37-.27L71.77,1a6.21,6.21,0,0,1,.81-.42c.15-.06.31-.13.47-.18l.38-.12.36-.09.17,0a1.65,1.65,0,0,1,.32-.06l.3,0,.29,0h.62l.39,0,.22,0,.21.05.2,0a1,1,0,0,1,.23.06l.36.13.18.08.23.12a1.19,1.19,0,0,1,.15.09s0,0,0,0A2.71,2.71,0,0,1,78,.91a.75.75,0,0,1,.17.14,1.71,1.71,0,0,1,.2.18,1.62,1.62,0,0,1,.18.19,1,1,0,0,1,.13.16l.09.11a2.2,2.2,0,0,1,.17.25,1.78,1.78,0,0,1,.17.3,3.18,3.18,0,0,1,.16.32c.16.37.31.76.44,1.15l0,.14a7.7,7.7,0,0,1,.26.94.53.53,0,0,0,0,.12c0,.2.08.4.11.61s.06.4.08.6v0s0,0,0,0c0,.19,0,.38,0,.56a12,12,0,0,1-1,5.39h0c-2.2,6.48,1.42,7.64,2.93,10.7a.25.25,0,0,0,0,.07A10.07,10.07,0,0,1,83.57,27,8.91,8.91,0,0,1,83.62,29Z"/><path class="cls-2" d="M83.62,40.49l-3.79,1.77L77.44,62.12c-.23,3-1.09,4.55-4.3,4.55h-7.8a3.63,3.63,0,0,0-3.67,2.5L59.93,75.5l-.78,2.87h0l-.95,3.33A4.55,4.55,0,0,1,53.83,85H33.74l4.41-15.83a3.46,3.46,0,0,1,2.67-2.4,4.71,4.71,0,0,1,1-.1h7.8c3.22,0,4.07-1.51,4.31-4.55l2.38-19.86,3.79-1.77a1.58,1.58,0,0,0,.38-2.62c-.9-.8-2-1.87-3.22-3-2.12-2-4.38-4.19-5.56-5.34-.11-.11-.22-.21-.3-.3a1.64,1.64,0,0,1-.5-1.33c0-.44.07-.87.1-1.29,2.81-2,5.39-3,7.49-4.25a9.44,9.44,0,0,0,4.2-4.73l1.85-3.94,2.77-5.87c.7.63,1.38,1.31,2,2a27.82,27.82,0,0,1,1.89,2.3c.44.59.85,1.18,1.24,1.79,2.11,3.4,2.41,6.49,2.19,10.72-.05,1-.14,2.1-.23,3.26a1.7,1.7,0,0,0,.48,1.32l.31.31c1.19,1.15,3.45,3.33,5.57,5.34C82,36,83.11,37.07,84,37.87A1.58,1.58,0,0,1,83.62,40.49Z"/><path class="cls-3" d="M60.1,29a3.72,3.72,0,0,1-.19.82A10.06,10.06,0,0,1,50,38l-.58,0-.11,0-7.84-2.4L43.15,25l1-6.35L41,13.72l0-.05.18-.38,2.6-5.46,1.76-3.7.23-.47a5.91,5.91,0,0,1,1.05-1.54L46.94,2l0,0a.81.81,0,0,1,.16-.16l.1-.09a.34.34,0,0,1,.06-.06,1.39,1.39,0,0,1,.19-.15l.37-.28A4.13,4.13,0,0,1,48.24,1a8.89,8.89,0,0,1,.81-.42c.16-.06.32-.13.48-.18h0L49.9.25l.44-.11a3.21,3.21,0,0,1,.43-.07l.29,0,.28,0H52l.29,0h.09l.16,0,.35.07a1.29,1.29,0,0,1,.21.06,2.78,2.78,0,0,1,.38.12l.24.1L54,.55A2.07,2.07,0,0,1,54.2.7a.8.8,0,0,1,.21.15l.1.06.22.18.17.16.17.18.12.15.09.11.17.25c0,.08.09.15.14.24s.13.25.19.38.16.38.23.57.09.23.13.36l0,.08.09.27c0,.15.09.31.13.47a1.77,1.77,0,0,1,.08.33A10.17,10.17,0,0,1,56.71,6c0,.13,0,.25,0,.38a1.48,1.48,0,0,1,0,.21,2.45,2.45,0,0,1,0,.27.06.06,0,0,1,0,0c0,.21,0,.41,0,.61a11.93,11.93,0,0,1-1,4.65h0c-2.1,6.15,1.06,7.5,2.67,10.24a4.79,4.79,0,0,1,.25.45l0,.07A9.93,9.93,0,0,1,60.05,27,8.91,8.91,0,0,1,60.1,29Z"/><path class="cls-1" d="M60.1,40.49l-3.79,1.77L53.93,62.12c-.24,3-1.09,4.55-4.31,4.55h-7.8a4.71,4.71,0,0,0-1,.1,3.46,3.46,0,0,0-2.67,2.4L33.74,85H4.33A3.86,3.86,0,0,1,.46,81.14V35A10.94,10.94,0,0,1,5.88,25.4h0c4.36-2.6,8-3.32,9.75-7.73l1.85-3.94,2.75-5.89L22,4.13l.22-.48c.06-.13.13-.26.2-.38l.1-.17h0a1.32,1.32,0,0,1,.16-.25c.09-.13.18-.26.28-.38a3.73,3.73,0,0,1,.26-.3l0,0,0,0,.31-.31.35-.3a3,3,0,0,1,.31-.22l0,0s0,0,0,0A4,4,0,0,1,24.73,1a8.73,8.73,0,0,1,.8-.42A4.68,4.68,0,0,1,26,.37h0a0,0,0,0,0,0,0l.34-.1.43-.11a3.49,3.49,0,0,1,.43-.07l.3,0,.27,0h2.43c.3.1.6.2.9.32.8.28,1.59.6,2.37,1,.48.2,1,.44,1.5.69l1.2.6.53.27a41.06,41.06,0,0,1,4.31,2.77c.94.7,1.85,1.44,2.71,2.22,0,0,0,0,0,0a27.5,27.5,0,0,1,2,2c.66.73,1.31,1.5,1.9,2.3.43.59.83,1.18,1.23,1.79,2.11,3.4,2.41,6.49,2.19,10.72,0,.63-.07,1.29-.13,2,0,.42-.06.85-.1,1.29a1.64,1.64,0,0,0,.5,1.33c.08.09.19.19.3.3,1.18,1.15,3.44,3.33,5.56,5.34,1.18,1.1,2.32,2.17,3.22,3A1.58,1.58,0,0,1,60.1,40.49Z"/><path class="cls-2" d="M51.34,0l-.28,0-.29,0a3.21,3.21,0,0,0-.43.07L49.9.25l-.34.11h0c-.16,0-.32.12-.48.18a8.89,8.89,0,0,0-.81.42,4.13,4.13,0,0,0-.38.25,3.27,3.27,0,0,0-.37.28,1.39,1.39,0,0,0-.19.15.34.34,0,0,0-.06.06l-.1.09A.81.81,0,0,0,47,2l0,0-.13.13a5.91,5.91,0,0,0-1.05,1.54l-.23.47L43.78,7.85,41,13.72l-1.85,3.94A9.42,9.42,0,0,1,35,22.38c-1.63-2.73-4.78-4.09-2.69-10.23h0a11.91,11.91,0,0,0,1-5.38c0-.19,0-.37,0-.56V6.12c0-.2-.05-.41-.08-.61s-.07-.4-.12-.6a8.5,8.5,0,0,0-.32-1.2,11.31,11.31,0,0,0-.43-1.15,3.18,3.18,0,0,0-.16-.32A2.75,2.75,0,0,0,31.93,2l0-.06-.15-.21a4.4,4.4,0,0,0-.4-.46l-.16-.14C31.12,1,31.05,1,31,.9L30.84.8,30.59.63,30.38.52l-.22-.1L29.94.33,29.7.25,29.47.17,29.24.12h0L29,.08l-.19,0h-.1l-.3,0Z"/><polygon class="cls-3" points="45.53 4.13 43.78 7.85 41.02 13.72 40.99 13.67 41.17 13.29 43.77 7.83 45.53 4.13"/><path d="M36.58,29a3.72,3.72,0,0,1-.19.82,9.9,9.9,0,0,1-2.32,4.73l-.33.35A10,10,0,0,1,26.52,38l-.58,0-.11,0L18,35.56,19.62,25l1-6.35-3.11-4.9,2.75-5.89L22,4.13l.22-.48c.06-.13.13-.26.2-.38l.1-.17h0a1.32,1.32,0,0,1,.16-.25c.09-.13.18-.26.28-.38a3.73,3.73,0,0,1,.26-.3l0,0,0,0,.31-.31.35-.3a3,3,0,0,1,.31-.22l0,0s0,0,0,0A4,4,0,0,1,24.73,1a8.73,8.73,0,0,1,.8-.42A4.68,4.68,0,0,1,26,.37h0a0,0,0,0,0,0,0l.34-.1.43-.11a3.49,3.49,0,0,1,.43-.07l.3,0,.27,0h.63l.3,0h.09l.19,0,.19,0h0l.23.06.23.07.24.08.22.09.22.1.21.12.25.16L31,.9l.21.18.16.14a4.4,4.4,0,0,1,.4.46l.15.22,0,.05a2.75,2.75,0,0,1,.17.29,3.18,3.18,0,0,1,.16.32,11.31,11.31,0,0,1,.43,1.15A9.63,9.63,0,0,1,33,4.91c.05.2.08.4.12.61s.06.4.08.6v.07c0,.19,0,.38,0,.57a11.8,11.8,0,0,1-1,5.38h0c-2.09,6.15,1.06,7.51,2.69,10.24.08.15.17.3.24.46l0,.07a10.26,10.26,0,0,1,.87,2,9.77,9.77,0,0,1,.42,2.1A8.91,8.91,0,0,1,36.58,29Z"/><path class="cls-3" d="M36.58,40.49l-3.79,1.77L30.4,62.12c-.23,3-1.08,4.55-4.3,4.55H18.3a4.62,4.62,0,0,0-1,.1,3.46,3.46,0,0,0-2.68,2.4L12.89,75.5l-.78,2.87h0L10.22,85H4.33A3.86,3.86,0,0,1,.46,81.14V35A10.94,10.94,0,0,1,5.88,25.4h0c4.36-2.6,8-3.32,9.75-7.73l1.85-3.94,2.75-5.89c.71.64,1.4,1.33,2,2s1.31,1.5,1.9,2.3c.43.59.83,1.18,1.23,1.79,2.11,3.4,2.42,6.49,2.19,10.72,0,.63-.07,1.29-.13,2,0,.42-.06.85-.1,1.29a1.64,1.64,0,0,0,.5,1.33l.29.3c1.2,1.15,3.45,3.33,5.57,5.33,1.18,1.11,2.33,2.18,3.22,3A1.58,1.58,0,0,1,36.58,40.49Z"/><path class="cls-1" d="M43.24,66.77H40.82a4.71,4.71,0,0,1,1-.1h1.41S43.24,66.74,43.24,66.77Z"/></svg>
+    		<div class="text-xl font-semibold pt-4">An inclusive community</div>
+			<div class="text-base pt-4">
+			We are millions of drivers and riders who share Community Guidelines and depend on one another to do the right thing.
+			</div>
+		</div>
+	</section>
+	<button class="text-lg my-8 lg:mx-20  border-gray border-b-2 focus:border-white mx-4">Learn more</button>
+</div>
+<div class="row">
+	<div class="column">
+		<div class="text-gray-700 lg:px-4 py-4">
+			<div class=" lg:px-24">
+				<div class="text-4xl font-semibold pt-4">Meet Virat Kohli's Uber 11 team</div>
+				<div class="text-lg py-2 my-4 lg:w-3/4">A successful team is the result of great players who, with their enthusiasm and passion, move the team forward. Virat Kohli's Uber 11 team comprises driver partners who are nothing short of champions. Let's take a look at the qualities that make them, and our team, exceptional.</div>
+				<button class="text-base mt- border-b-2">Meet the team</button>
+			</div>
+		</div>
+	</div>
+	<div class="column">
+		<img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_585,h_329/v1536830247/assets/21/183170-2085-4083-85fd-afeaa2de7a4d/original/XXX-Meri-UBER-11-Chameleon-02-%282%29.jpg" class="pl-4 lg:py-4 lg:pr-24">
+	</div>
+</div>
+<div class="row bg-gray-100">
+	<div class="column">
+		<div class="text-gray-800 lg:px-4 py-4">
+			<div class=" lg:px-24">
+				<div class="text-4xl font-semibold pt-4">The Driver app</div>
+				<div class="text-lg py-2 my-4">Easy to use and reliable, the app was built for drivers, with drivers.</div>
+				<button class="text-base  border-b-2">Learn more</button>
+			</div>
+		</div>
+	</div>
+	<div class="column">
+		<img src="images/Phone.jpeg" height="100%" width="100%" class="pl-4 lg:py-4 lg:pr-24">
+	</div>
+</div>
+<div class="text-4xl font-semibold pt-8 lg:px-24 px-4">Frequently asked questions</div>
+<div class="lg:mx-24 mx-4 mt-10">
+	<button class="accordion text-xl border-l-2 border-r-2 border-t-2 font-semibold">Can I drive with Uber in my city?</button>
+	<div class="panel px-8 border-l-2 border-r-2">
+	  <p class="px-4 pt-4">Uber is available in hundreds of cities worldwide. Tap below to see if yours is one of them.</p>
+	  <div class="p-4"><button class="text-base  border-b-2">See all cities</button></div>
+	</div>
+	<button class="accordion text-xl border-l-2 border-r-2 border-t-2 font-semibold">What are the requirements to drive with Uber?</button>
+	<div class="panel px-8 border-l-2 border-r-2">
+	  <p class="px-4 pt-4">You must meet the minimum age to drive in your city, have an eligible mode of transportation, and submit required documents, including a valid driver’s license.</p>
+	  <div class="p-4"><button class="text-base  border-b-2">See driver requirements</button></div>
+	</div>
+	<button class="accordion text-xl border-l-2 border-r-2 border-t-2 font-semibold">Is the Uber platform safe?</button>
+	<div class="panel px-8 border-l-2 border-r-2">
+	  <p class="px-4 pt-4">Your safety matters to us. Uber has a Global Safety Team dedicated to doing our part to help prevent incidents. Learn more about the safety features in the app, as well as safeguards such as GPS tracking and phone anonymization, by visiting the link below.</p>
+	  <div class="p-4"><button class="text-base  border-b-2">See Uber's commitment to safety</button></div>
+	</div>
+	<button class="accordion text-xl border-l-2 border-r-2 border-t-2 font-semibold">Do I need my own car?</button>
+	<div class="panel px-8 border-l-2 border-r-2">
+	  <p class="px-4 pt-4">If you want to drive with Uber but need a car, you can get a car from one of our vehicle partners or from a fleet partner in select markets. Please note that vehicle options may vary by city.</p>
+	  <div class="p-4"><button class="text-base  border-b-2">Find a car</button></div>
+	</div>
+</div>
+<div class="text-4xl font-semibold pt-8 lg:px-24 px-4 py-6"><button class="border-b-2 border-black pb-8">Signup to drive<i class="fa fa-arrow-right lg:pl-64 px-4" aria-hidden="true"></i>
+</button></div>
+<div class="mt-20 lg:px-24 p-4 ">Certain requirements and features vary by country, region, and city.</div>
+<div class="bg-gray-900 mt-8 text-white px-16">
+	<div class="text-xl pt-24 font-semibold">Uber</div>
+	<div class="text-base pt-6">Visit Help Center</div>
+	<div class="wrapper mt-2">
+		<section class="items">
+			<div class="item pt-4">
+				<div class="text-xl font-semibold mb-2">Company</div>
+				<ul class="text-sm">
+					<li class="py-2">About us</li>
+					<li class="py-2">Newsroom</li>
+					<li class="py-2">Investors</li>
+					<li class="py-2">Blog</li>
+					<li class="py-2">Careers</li>
+				</ul>		
+			</div>
+			<div class="item pt-4">
+				<div class="text-xl font-semibold mb-2">Products</div>
+				<ul class="text-sm">
+					<li class="py-2">Ride</li>
+					<li class="py-2">Drive</li>
+					<li class="py-2">Eat</li>
+					<li class="py-2">Uber for business</li>
+					<li class="py-2">Uber Freight</li>
+				</ul>		
+			</div>
+			<div class="item pt-4">
+				<div class="text-xl font-semibold mb-2">Global Citizenship</div>
+				<ul class="text-sm">
+					<li class="py-2">Safety</li>
+					<li class="py-2">Diversity</li>
+					<li class="py-2">Transparency</li>
+				</ul>		
+			</div>
+			<div class="item pt-4">
+				<div class="text-xl font-semibold mb-2">Innovation</div>
+				<ul class="text-sm">
+					<li class="py-2">ATG</li>
+					<li class="py-2">AI</li>
+					<li class="py-2">Elevate</li>
+				</ul>		
+			</div>
+		</section>
+	</div>
+    <div class="my-8">
+        <a class="pr-4" href="#"><i class="fa fa-facebook"></i></a>
+        <a class="px-4" href="#"><i class="fa fa-twitter"></i></a>
+        <a class="px-4" href="#"><i class="fa fa-youtube-play"></i></a>
+        <a class="px-4" href="#"><i class="fa fa-linkedin"></i></a>
+        <a class="px-4" href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="block mt-4 lg:inline-block hover:bg-gray-800 py-2 lg:pl-24 rounded-full lg:mt-0 text-white hover:text-white"><i class="fa fa-globe" aria-hidden="true"></i> English</a>
+        <a href="#" class="block mt-4 lg:inline-block hover:bg-gray-800 py-2 lg:px-4 rounded-full lg:mt-0 text-white hover:text-white"><i class="fa fa-map-marker" aria-hidden="true"></i> Visakhapatnam</a> 
+		<a href="#" class="block lg:inline-block hover:bg-gray-800 pb-4  lg:float-right lg:mt-0" >
+		 <svg xmlns="http://www.w3.org/2000/svg" height="40px" width="200px" viewBox="0 0 119.7 40"><title>Download_on_the_App_Store_Badge_US-UK_RGB_blk_4SVG_092917</title><path d="M110.1 0H7.5c-.7 0-1.3.1-2 .2-.6.1-1.3.3-1.9.6C3 1.1 2.5 1.5 2 2S1.1 3 .8 3.6C.5 4.2.3 4.9.2 5.5c-.1.7-.2 1.4-.2 2v24.9c0 .7.1 1.3.2 2s.3 1.3.6 1.9c.3.7.7 1.2 1.2 1.7s1 .9 1.6 1.2c.6.3 1.2.5 1.9.6.7.1 1.3.2 2 .2h104.6c.7 0 1.3-.1 2-.2s1.3-.3 1.9-.6c.6-.3 1.1-.7 1.6-1.2s.9-1 1.2-1.6c.3-.6.5-1.2.6-1.9.1-.7.2-1.3.2-2v-.9V9.5 8.4v-.9c0-.7-.1-1.3-.2-2s-.3-1.3-.6-1.9c-.6-1.2-1.6-2.2-2.8-2.8-.6-.3-1.2-.5-1.9-.6-.7-.1-1.3-.2-2-.2h-2z" fill="#a6a6a6"/><path d="M8.4 39.1h-.9c-.6 0-1.3-.1-1.9-.2-.6-.1-1.1-.3-1.7-.5-.5-.3-1-.6-1.4-1-.4-.4-.8-.9-1-1.4-.3-.5-.4-1.1-.5-1.7-.1-.6-.2-1.2-.2-1.9v-24-.9c0-.6.1-1.3.2-1.9.1-.5.3-1.1.6-1.6s.6-1 1-1.4c.4-.4.9-.7 1.4-1 .5-.3 1.1-.4 1.7-.5C6.3 1 6.9.9 7.6.9H112.2c.6 0 1.2.1 1.9.2.6.1 1.1.3 1.7.5 1 .5 1.9 1.4 2.4 2.4.3.5.4 1.1.5 1.6.1.6.2 1.3.2 1.9v24.9c0 .6-.1 1.2-.2 1.9-.1.6-.3 1.1-.5 1.7-.3.5-.6 1-1 1.4-.4.4-.9.8-1.4 1-.5.3-1.1.5-1.7.5-.6.1-1.2.2-1.9.2H8.4z"/><path d="M24.8 20.3c0-1.7.9-3.3 2.4-4.2-.9-1.3-2.4-2.1-4-2.2-1.7-.2-3.3 1-4.2 1-.9 0-2.2-1-3.6-1-1.9.1-3.6 1.1-4.5 2.7-1.9 3.3-.5 8.3 1.4 11 .9 1.3 2 2.8 3.4 2.8 1.4-.1 1.9-.9 3.6-.9 1.7 0 2.1.9 3.6.9s2.4-1.3 3.3-2.7c.7-.9 1.2-2 1.5-3.1-1.8-.6-2.9-2.4-2.9-4.3zM22 12.2c.8-1 1.2-2.2 1.1-3.5-1.2.1-2.4.7-3.2 1.7-.8.9-1.2 2.1-1.1 3.4 1.3 0 2.4-.6 3.2-1.6zM42.3 27.1h-4.7l-1.1 3.4h-2L39 18.1h2l4.5 12.4h-2l-1.2-3.4zm-4.2-1.5h3.8L40 20.1h-.1l-1.8 5.5zm17.1.4c0 2.8-1.5 4.6-3.8 4.6-1.2.1-2.3-.6-2.8-1.6v4.5h-1.9v-12h1.8V23c.6-1 1.7-1.6 2.9-1.6 2.2-.1 3.8 1.8 3.8 4.6zm-2 0c0-1.8-.9-3-2.4-3-1.4 0-2.4 1.2-2.4 3s1 3 2.4 3c1.5 0 2.4-1.2 2.4-3zm11.9 0c0 2.8-1.5 4.6-3.8 4.6-1.2.1-2.3-.6-2.8-1.6v4.5h-1.9v-12h1.8V23c.6-1 1.7-1.6 2.9-1.6 2.3-.1 3.8 1.8 3.8 4.6zm-1.9 0c0-1.8-.9-3-2.4-3-1.4 0-2.4 1.2-2.4 3s1 3 2.4 3c1.5 0 2.4-1.2 2.4-3zm8.5 1c.1 1.2 1.3 2 3 2 1.6 0 2.7-.8 2.7-1.9 0-1-.7-1.5-2.3-1.9l-1.6-.4c-2.3-.5-3.3-1.6-3.3-3.3 0-2.1 1.9-3.6 4.5-3.6s4.4 1.5 4.5 3.6h-1.9c-.1-1.2-1.1-2-2.6-2s-2.5.8-2.5 1.9c0 .9.7 1.4 2.3 1.8l1.4.3c2.5.6 3.6 1.6 3.6 3.4 0 2.3-1.8 3.8-4.8 3.8-2.8 0-4.6-1.4-4.7-3.7h1.7zm11.6-7.7v2.1H85v1.5h-1.7v5c0 .8.3 1.1 1.1 1.1h.6v1.5c-.3.1-.7.1-1 .1-1.8 0-2.5-.7-2.5-2.4V23h-1.3v-1.5h1.3v-2.1h1.8zm2.8 6.7c0-2.8 1.7-4.6 4.3-4.6 2.6 0 4.3 1.8 4.3 4.6 0 2.9-1.7 4.6-4.3 4.6-2.7 0-4.3-1.8-4.3-4.6zm6.7 0c0-2-.9-3.1-2.4-3.1S88 24 88 26s.9 3.1 2.4 3.1 2.4-1.2 2.4-3.1zm3.4-4.6H98V23c.2-1 1.2-1.7 2.2-1.6.2 0 .4 0 .6.1v1.7c-.3-.1-.6-.1-.8-.1-1 0-1.9.8-1.9 1.8v5.7h-1.9v-9.2zm13.2 6.4c-.2 1.6-1.8 2.8-3.9 2.8-2.6 0-4.3-1.8-4.3-4.6s1.6-4.7 4.2-4.7c2.5 0 4.1 1.7 4.1 4.5v.6h-6.4v.1c-.1 1.3.8 2.4 2.1 2.6h.3c.9.1 1.8-.4 2.1-1.3h1.8zm-6.3-2.7h4.5c.1-1.2-.9-2.2-2.1-2.3h-.2c-1.2 0-2.2 1-2.2 2.3z" fill="#fff"/><g><path d="M37.8 8.7c1.5-.1 2.7 1 2.8 2.4v.5c0 1.9-1 3-2.8 3h-2.2v-6l2.2.1zm-1.2 5.2h1.1c1 .1 1.9-.7 2-1.8v-.4c.1-1-.6-2-1.6-2.1h-1.5v4.3zm5.1-1.5c-.1-1.2.8-2.2 1.9-2.3 1.2-.1 2.2.8 2.3 1.9v.4c.1 1.2-.7 2.2-1.9 2.3-1.2.1-2.2-.7-2.3-1.9v-.4zm3.3 0c0-1-.4-1.5-1.2-1.5-.8 0-1.2.6-1.2 1.5 0 1 .4 1.6 1.2 1.6.8 0 1.2-.6 1.2-1.6zm6.6 2.3h-.9l-.9-3.3h-.1l-.9 3.3h-.9l-1.2-4.5h.9l.8 3.4h.1l.9-3.4h.9l.9 3.4h.1l.8-3.4h.9l-1.4 4.5zm2.3-4.5h.9v.7h.1c.2-.5.8-.8 1.3-.8.8-.1 1.5.5 1.6 1.4V14.7h-.9V12c0-.7-.3-1.1-1-1.1-.6 0-1.1.4-1.1 1V14.7h-.9v-4.5zm5.2-1.8h.9v6.3h-.9V8.4zm2.1 4c-.1-1.2.7-2.2 1.9-2.3 1.2-.1 2.2.7 2.3 1.9v.4c.1 1.2-.7 2.2-1.9 2.3-1.2.1-2.2-.7-2.3-1.9v-.4zm3.4 0c0-1-.4-1.5-1.2-1.5-.8 0-1.2.6-1.2 1.5 0 1 .4 1.6 1.2 1.6.7 0 1.2-.6 1.2-1.6zm1.8 1c0-.8.6-1.3 1.7-1.3l1.2-.1v-.4c0-.5-.3-.7-.9-.7-.5 0-.8.2-.9.5h-.9c.1-.8.8-1.3 1.8-1.3 1.1 0 1.8.6 1.8 1.5v3.1h-.9v-.6h-.1c-.3.5-.8.7-1.4.7-.7.1-1.4-.5-1.5-1.2.1-.1.1-.1.1-.2zm2.9-.4v-.4l-1.1.1c-.6 0-.9.3-.9.6 0 .4.4.6.8.6.6.2 1.1-.2 1.2-.9 0 .1 0 .1 0 0zm2-.6c0-1.4.7-2.3 1.9-2.3.6 0 1.1.3 1.4.8h.1V8.4h.9v6.3h-.9V14h-.1c-.3.5-.8.8-1.4.8-1.1 0-1.9-.9-1.9-2.4zm1 0c0 1 .4 1.5 1.2 1.5.8 0 1.2-.6 1.2-1.5s-.5-1.5-1.2-1.5c-.8 0-1.2.6-1.2 1.5zm6.9 0c-.1-1.2.7-2.2 1.9-2.3 1.2-.1 2.2.7 2.3 1.9v.4c.1 1.2-.7 2.2-1.9 2.3-1.2.1-2.2-.7-2.3-1.9v-.4zm3.4 0c0-1-.4-1.5-1.2-1.5-.8 0-1.2.6-1.2 1.5 0 1 .4 1.6 1.2 1.6.7 0 1.2-.6 1.2-1.6zm2.1-2.2h.9v.7h.1c.2-.5.8-.8 1.3-.8.8-.1 1.5.5 1.6 1.4V14.7h-.9V12c0-.7-.3-1.1-1-1.1-.6 0-1.1.4-1.1 1V14.7h-.9v-4.5zm8.8-1.1v1.1h1v.8h-1v2.3c0 .5.2.7.6.7h.3v.7h-.5c-1 0-1.4-.3-1.4-1.2V11h-.7v-.7h.7V9.1h1zm2.2-.7h.9v2.5h.1c.2-.5.8-.9 1.4-.8.8 0 1.5.6 1.6 1.4V14.7h-.9V12c0-.7-.3-1.1-1-1.1-.6 0-1.1.4-1.1 1V14.7h-.9V8.4zm9.1 5.1c-.2.8-1.1 1.4-1.9 1.3-1.1 0-2.1-.9-2.1-2v-.3c-.2-1.1.6-2.2 1.8-2.3h.3c1.3 0 2 .9 2 2.3v.3h-3.2v.1c-.1.7.4 1.2 1.1 1.3h.1c.4.1.9-.2 1.1-.5h.8zm-3.2-1.5h2.3c0-.6-.4-1.1-1-1.2h-.1c-.6.1-1.2.6-1.2 1.2z" fill="#fff"/></g></svg></a>
+	    <a href="#" class="block lg:inline-block hover:bg-gray-800 lg:pb-4 lg:float-right lg:mt-0" >
+	     <svg xmlns="http://www.w3.org/2000/svg" height="40px" width="200px"
+	     viewBox="0 0 135 40"><path d="M130 40H5c-2.8 0-5-2.2-5-5V5c0-2.8 2.2-5 5-5h125c2.8 0 5 2.2 5 5v30c0 2.8-2.2 5-5 5z"/><path d="M130 .8c2.3 0 4.2 1.9 4.2 4.2v30c0 2.3-1.9 4.2-4.2 4.2H5C2.7 39.2.8 37.3.8 35V5C.8 2.7 2.7.8 5 .8h125m0-.8H5C2.2 0 0 2.3 0 5v30c0 2.8 2.2 5 5 5h125c2.8 0 5-2.2 5-5V5c0-2.7-2.2-5-5-5z" fill="#a6a6a6"/><path d="M47.4 10.2c0 .8-.2 1.5-.7 2-.6.6-1.3.9-2.2.9s-1.6-.3-2.2-.9c-.6-.6-.9-1.3-.9-2.2s.3-1.6.9-2.2c.6-.6 1.3-.9 2.2-.9.4 0 .8.1 1.2.3.4.2.7.4.9.7l-.5.5c-.4-.5-.9-.7-1.6-.7-.6 0-1.2.2-1.6.7-.5.4-.7 1-.7 1.7s.2 1.3.7 1.7 1 .7 1.6.7c.7 0 1.2-.2 1.7-.7.3-.3.5-.7.5-1.2h-2.2v-.8h2.9v.4zM52 7.7h-2.7v1.9h2.5v.7h-2.5v1.9H52v.8h-3.5V7H52v.7zm3.3 5.3h-.8V7.7h-1.7V7H57v.7h-1.7V13zm4.6 0V7h.8v6h-.8zm4.2 0h-.8V7.7h-1.7V7h4.1v.7H64l.1 5.3zm9.5-.8c-.6.6-1.3.9-2.2.9-.9 0-1.6-.3-2.2-.9-.6-.6-.9-1.3-.9-2.2s.3-1.6.9-2.2 1.3-.9 2.2-.9c.9 0 1.6.3 2.2.9s.9 1.3.9 2.2-.3 1.6-.9 2.2zm-3.8-.5c.4.4 1 .7 1.6.7s1.2-.2 1.6-.7c.4-.4.7-1 .7-1.7s-.2-1.3-.7-1.7c-.4-.4-1-.7-1.6-.7s-1.2.2-1.6.7c-.4.4-.7 1-.7 1.7s.2 1.3.7 1.7zm5.8 1.3V7h.9l2.9 4.7V7h.8v6h-.8l-3.1-4.9V13h-.7z" fill="#fff" stroke="#fff" stroke-width=".2" stroke-miterlimit="10"/><path d="M68.1 21.8c-2.4 0-4.3 1.8-4.3 4.3 0 2.4 1.9 4.3 4.3 4.3s4.3-1.8 4.3-4.3c0-2.6-1.9-4.3-4.3-4.3zm0 6.8c-1.3 0-2.4-1.1-2.4-2.6s1.1-2.6 2.4-2.6 2.4 1 2.4 2.6c0 1.5-1.1 2.6-2.4 2.6zm-9.3-6.8c-2.4 0-4.3 1.8-4.3 4.3 0 2.4 1.9 4.3 4.3 4.3s4.3-1.8 4.3-4.3c0-2.6-1.9-4.3-4.3-4.3zm0 6.8c-1.3 0-2.4-1.1-2.4-2.6s1.1-2.6 2.4-2.6c1.3 0 2.4 1 2.4 2.6 0 1.5-1.1 2.6-2.4 2.6zm-11.1-5.5v1.8H52c-.1 1-.5 1.8-1 2.3-.6.6-1.6 1.3-3.3 1.3-2.7 0-4.7-2.1-4.7-4.8s2.1-4.8 4.7-4.8c1.4 0 2.5.6 3.3 1.3l1.3-1.3c-1.1-1-2.5-1.8-4.5-1.8-3.6 0-6.7 3-6.7 6.6s3.1 6.6 6.7 6.6c2 0 3.4-.6 4.6-1.9 1.2-1.2 1.6-2.9 1.6-4.2 0-.4 0-.8-.1-1.1h-6.2zm45.4 1.4c-.4-1-1.4-2.7-3.6-2.7s-4 1.7-4 4.3c0 2.4 1.8 4.3 4.2 4.3 1.9 0 3.1-1.2 3.5-1.9l-1.4-1c-.5.7-1.1 1.2-2.1 1.2s-1.6-.4-2.1-1.3l5.7-2.4-.2-.5zm-5.8 1.4c0-1.6 1.3-2.5 2.2-2.5.7 0 1.4.4 1.6.9l-3.8 1.6zM82.6 30h1.9V17.5h-1.9V30zm-3-7.3c-.5-.5-1.3-1-2.3-1-2.1 0-4.1 1.9-4.1 4.3s1.9 4.2 4.1 4.2c1 0 1.8-.5 2.2-1h.1v.6c0 1.6-.9 2.5-2.3 2.5-1.1 0-1.9-.8-2.1-1.5l-1.6.7c.5 1.1 1.7 2.5 3.8 2.5 2.2 0 4-1.3 4-4.4V22h-1.8v.7zm-2.2 5.9c-1.3 0-2.4-1.1-2.4-2.6s1.1-2.6 2.4-2.6 2.3 1.1 2.3 2.6-1 2.6-2.3 2.6zm24.4-11.1h-4.5V30h1.9v-4.7h2.6c2.1 0 4.1-1.5 4.1-3.9s-2-3.9-4.1-3.9zm.1 6h-2.7v-4.3h2.7c1.4 0 2.2 1.2 2.2 2.1-.1 1.1-.9 2.2-2.2 2.2zm11.5-1.8c-1.4 0-2.8.6-3.3 1.9l1.7.7c.4-.7 1-.9 1.7-.9 1 0 1.9.6 2 1.6v.1c-.3-.2-1.1-.5-1.9-.5-1.8 0-3.6 1-3.6 2.8 0 1.7 1.5 2.8 3.1 2.8 1.3 0 1.9-.6 2.4-1.2h.1v1h1.8v-4.8c-.2-2.2-1.9-3.5-4-3.5zm-.2 6.9c-.6 0-1.5-.3-1.5-1.1 0-1 1.1-1.3 2-1.3.8 0 1.2.2 1.7.4-.2 1.2-1.2 2-2.2 2zm10.5-6.6l-2.1 5.4h-.1l-2.2-5.4h-2l3.3 7.6-1.9 4.2h1.9l5.1-11.8h-2zm-16.8 8h1.9V17.5h-1.9V30z" fill="#fff"/><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="21.795" y1="-152.295" x2="5.012" y2="-135.513" gradientTransform="translate(0 161)"><stop offset="0" stop-color="#00a0ff"/><stop offset=".007" stop-color="#00a1ff"/><stop offset=".26" stop-color="#00beff"/><stop offset=".512" stop-color="#00d2ff"/><stop offset=".76" stop-color="#00dfff"/><stop offset="1" stop-color="#00e3ff"/></linearGradient><path d="M10.4 7.5c-.3.3-.4.8-.4 1.4V31c0 .6.2 1.1.5 1.4l.1.1L23 20.1v-.2L10.4 7.5z" fill="url(#a)"/><linearGradient id="b" gradientUnits="userSpaceOnUse" x1="33.834" y1="-140.95" x2="9.637" y2="-140.95" gradientTransform="translate(0 161)"><stop offset="0" stop-color="#ffe000"/><stop offset=".409" stop-color="#ffbd00"/><stop offset=".775" stop-color="orange"/><stop offset="1" stop-color="#ff9c00"/></linearGradient><path d="M27 24.3l-4.1-4.1v-.3l4.1-4.1.1.1 4.9 2.8c1.4.8 1.4 2.1 0 2.9l-5 2.7z" fill="url(#b)"/><linearGradient id="c" gradientUnits="userSpaceOnUse" x1="24.816" y1="-138.715" x2="2.058" y2="-115.957" gradientTransform="translate(0 161)"><stop offset="0" stop-color="#ff3a44"/><stop offset="1" stop-color="#c31162"/></linearGradient><path d="M27.1 24.2L22.9 20 10.4 32.5c.5.5 1.2.5 2.1.1l14.6-8.4" fill="url(#c)"/><linearGradient id="d" gradientUnits="userSpaceOnUse" x1="7.261" y1="-160.788" x2="17.424" y2="-150.625" gradientTransform="translate(0 161)"><stop offset="0" stop-color="#32a071"/><stop offset=".069" stop-color="#2da771"/><stop offset=".476" stop-color="#15cf74"/><stop offset=".801" stop-color="#06e775"/><stop offset="1" stop-color="#00f076"/></linearGradient><path d="M27.1 15.8L12.5 7.5c-.9-.5-1.6-.4-2.1.1L22.9 20l4.2-4.2z" fill="url(#d)"/><path d="M27 24.1l-14.5 8.2c-.8.5-1.5.4-2 0l-.1.1.1.1c.5.4 1.2.5 2 0L27 24.1z" opacity=".2"/><path d="M10.4 32.3c-.3-.3-.4-.8-.4-1.4v.1c0 .6.2 1.1.5 1.4v-.1h-.1zm21.6-11l-5 2.8.1.1 4.9-2.8c.7-.4 1-.9 1-1.4 0 .5-.4.9-1 1.3z" opacity=".12"/><path d="M12.5 7.6L32 18.7c.6.4 1 .8 1 1.3 0-.5-.3-1-1-1.4l-19.5-11c-1.4-.9-2.5-.3-2.5 1.3V9c0-1.5 1.1-2.2 2.5-1.4z" opacity=".25" fill="#fff"/></svg></a>
+    </div>
+    <div class="lg:py-16 py-4 text-sm">
+    	© 2020 Uber Technologies Inc.
+    	<div class="lg:float-right py-2">
+    		<a href="#" class=" px-2">Privacy</a>
+    		<a href="#" class=" px-2">Accessibility</a>
+    		<a href="#" class="px-2 ">Terms</a>
+    	</div>
+    </div>
 </div>
 </body>
 <script>
-	function closeform() {
+//Dropdown
+function closeform() {
   var x = document.getElementById("navigation");
   if (x.style.display === "block") {
     x.style.display = "none";
   } else {
     x.style.display = "block";
   }
+}
+//Password
+var state= false;
+function togglepass(){
+    if(state){
+	document.getElementById("password").setAttribute("type","password");
+	document.getElementById("eye").style.color='#7a797e';
+	state = false;
+     }
+     else{
+	document.getElementById("password").setAttribute("type","text");
+	document.getElementById("eye").style.color='#008000';
+	state = true;
+     }
+}
+//Tabs
+function openPage(pageName,elmnt) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.opacity=0.3;
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.opacity=1;
+}
+document.getElementById("defaultOpen").click();
+//  Accordion
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
 }
 </script>
 </html>
